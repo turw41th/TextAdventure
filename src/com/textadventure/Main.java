@@ -1,10 +1,10 @@
 package com.textadventure;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.print("Hello ");
-        System.out.println("World");
+import java.io.IOException;
 
-        //Code will follow
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Game game = new Game();
+        game.run();
     }
 }
