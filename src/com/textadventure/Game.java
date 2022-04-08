@@ -3,6 +3,7 @@ package com.textadventure;
 import com.action.handler.ActionHandler;
 import com.action.handler.ExitHandler;
 
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class Game {
     }
 
 
-    public void run(){
+    public void run() throws IOException {
 
         String command = "";
 
@@ -51,7 +52,12 @@ public class Game {
                 break;
             }
         }
-        return relevantHandler.handle();
+        try {
+            return relevantHandler.handle();
+        } catch (NullPointerException e){
+            System.out.println("There is no such command!");
+        };
+        return "Something went wrong";
     }
 
 }
