@@ -1,6 +1,12 @@
 package com.action.handler;
 
+import com.textadventure.Game;
+
 public abstract class PhraseActionHandler extends ActionHandler{
+
+    public PhraseActionHandler(Game game){
+        super(game);
+    }
 
     @Override
     public boolean matches(String command){

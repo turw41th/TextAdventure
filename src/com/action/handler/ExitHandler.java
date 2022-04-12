@@ -1,11 +1,18 @@
 package com.action.handler;
 
+import com.textadventure.Game;
+
 public class ExitHandler extends PhraseActionHandler {
+
+    public ExitHandler(Game game){
+        super(game);
+    }
 
 
     @Override
     public String handle() {
-        return "Exithandler called!";
+        this.game.requestExit();
+        return "Thanks for playing!";
     }
 
     @Override

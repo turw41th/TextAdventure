@@ -1,7 +1,9 @@
 package com.textadventure;
 
 import com.action.handler.ActionHandler;
+import com.action.handler.ErrorHandler;
 import com.action.handler.ExitHandler;
+import com.action.handler.TimeHandler;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -13,13 +15,21 @@ public class Game {
 
     Scanner myInput = new Scanner(System.in);
     private PrintStream output;
-    private List<ActionHandler> actionHandlers;
+    private ArrayList<ActionHandler> actionHandlers;
+
+    private boolean wantExit;
 
     public Game(){
         this.output = System.out;
         this.actionHandlers = new ArrayList<>();
+        this.wantExit = false;
 
-        this.actionHandlers.add(new ExitHandler());
+        this.actionHandlers.add(new ExitHandler(this));
+        this.actionHandlers.add(new TimeHandler(this));
+    }
+
+    public void requestExit(){
+        this.wantExit = true;
     }
 
 
@@ -28,7 +38,7 @@ public class Game {
         String command = "";
 
 
-        while(!command.equalsIgnoreCase("/exit")){
+        while(!this.wantExit){
 
             //Input
             this.output.print("> ");
@@ -55,9 +65,8 @@ public class Game {
         try {
             return relevantHandler.handle();
         } catch (NullPointerException e){
-            System.out.println("There is no such command!");
-        };
-        return "Something went wrong";
+            return new ErrorHandler(this).handle();
+        }
     }
 
 }
