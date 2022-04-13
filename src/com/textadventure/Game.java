@@ -1,9 +1,8 @@
 package com.textadventure;
 
-import com.action.handler.ActionHandler;
-import com.action.handler.ErrorHandler;
-import com.action.handler.ExitHandler;
-import com.action.handler.TimeHandler;
+import com.action.handler.*;
+import com.world.Location;
+import com.world.World;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -16,6 +15,7 @@ public class Game {
     Scanner myInput = new Scanner(System.in);
     private PrintStream output;
     private ArrayList<ActionHandler> actionHandlers;
+    private World world;
 
     private boolean wantExit;
 
@@ -26,6 +26,13 @@ public class Game {
 
         this.actionHandlers.add(new ExitHandler(this));
         this.actionHandlers.add(new TimeHandler(this));
+        this.actionHandlers.add(new GetCurrentLocationHandler(this));
+
+        this.world = new World();
+    }
+
+    public World getWorld() {
+        return world;
     }
 
     public void requestExit(){
@@ -48,7 +55,7 @@ public class Game {
             String outputString = this.update(command);
 
             //Output
-            this.output.println(outputString + "\n");
+            this.output.println(outputString);
 
         }
 
@@ -63,7 +70,7 @@ public class Game {
             }
         }
         try {
-            return relevantHandler.handle();
+            return relevantHandler.handle() + "\n";
         } catch (NullPointerException e){
             return new ErrorHandler(this).handle();
         }
