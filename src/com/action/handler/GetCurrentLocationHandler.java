@@ -11,11 +11,14 @@ public class GetCurrentLocationHandler extends PhraseActionHandler{
 
     @Override
     public String handle() {
-        return this.game.getWorld().getCurrentSituation();
+        if (this.game.getCommand().equalsIgnoreCase("/location") || this.game.getCommand().equalsIgnoreCase("/l")){
+            return this.game.getWorld().getCurrentSituation();
+        }
+        return this.game.getWorld().getCurrentSituationDetailed();
     }
 
     @Override
     protected String[] getPhrases() {
-        return new String[]{"/location"};
+        return new String[]{"/location", "/locationdetails", "/l", "/ld"};
     }
 }

@@ -18,18 +18,28 @@ public class World {
 
     public String getCurrentSituation(){
         String situation = "Current Location: " + this.currentLocation.getName() + "\n";
+        /*
         if (!this.currentLocation.isVisited()) {
             situation += "____________________________\n" + this.currentLocation.getDescription();
             this.currentLocation.setVisited();
         }
-
+        */
         return situation;
     }
+
+    public String getCurrentSituationDetailed(){
+        String situation = "Current Location: " + this.currentLocation.getName() + "\n"
+                + "____________________________\n" + this.currentLocation.getDescription();
+        return situation;
+    }
+
+
 
     private void generateLocations(){
         Location spireByFire = new Location("Spire by Fire Tavern", "This is the Spire by Fire Tavern. Have a beer and make some friends!");
         locations.add(spireByFire);
-
+        Location blackwoodCastle = new Location("Blackwood Castle", "Welcome to Blackwood castle, a place to rest from your adventures");
+        locations.add(blackwoodCastle);
 
 
         this.currentLocation = spireByFire;

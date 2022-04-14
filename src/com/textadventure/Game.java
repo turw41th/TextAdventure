@@ -20,8 +20,10 @@ public class Game {
     private PrintStream output;
     private ArrayList<ActionHandler> actionHandlers;
     private World world;
+    private String command = "";
 
     private boolean wantExit;
+
 
     /**
      * Game construtor.
@@ -40,13 +42,10 @@ public class Game {
         this.world = new World();
     }
 
-    /**
-     *
-     * @return World object
-     */
     public World getWorld() {
         return this.world;
     }
+
 
     /**
      * Sets exit condition to true. Gets called when /exit command is used
@@ -55,13 +54,19 @@ public class Game {
         this.wantExit = true;
     }
 
+    public String getCommand(){
+        return this.command;
+    }
+
+
+
     /**
      * Is the main run method which runs the game loop.
      * @throws IOException
      */
     public void run() throws IOException {
 
-        String command = "";
+        //String command = "";
 
         while(!this.wantExit){
 
