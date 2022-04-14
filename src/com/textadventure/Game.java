@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+/**
+ * Game class that gets instanced in the main method and represents the game itself.
+ */
 public class Game {
 
     Scanner myInput = new Scanner(System.in);
@@ -19,6 +23,11 @@ public class Game {
 
     private boolean wantExit;
 
+    /**
+     * Game construtor.
+     * adds Object of each ActionHandler child to actionHandlers ArrayList
+     * instances World object
+     */
     public Game(){
         this.output = System.out;
         this.actionHandlers = new ArrayList<>();
@@ -31,19 +40,28 @@ public class Game {
         this.world = new World();
     }
 
+    /**
+     *
+     * @return World object
+     */
     public World getWorld() {
-        return world;
+        return this.world;
     }
 
+    /**
+     * Sets exit condition to true. Gets called when /exit command is used
+     */
     public void requestExit(){
         this.wantExit = true;
     }
 
-
+    /**
+     * Is the main run method which runs the game loop.
+     * @throws IOException
+     */
     public void run() throws IOException {
 
         String command = "";
-
 
         while(!this.wantExit){
 
@@ -51,7 +69,7 @@ public class Game {
             this.output.print("> ");
             command = myInput.nextLine();
 
-            //Verarbeitung
+            //processing
             String outputString = this.update(command);
 
             //Output
