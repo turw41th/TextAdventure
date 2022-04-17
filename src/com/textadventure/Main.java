@@ -1,6 +1,7 @@
 package com.textadventure;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * @author Turwaith
@@ -11,7 +12,14 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Game game = new Game();
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Hello, and welcome to this little text adventure!\n");
+        System.out.print("Please enter a player/character name: ");
+        String playername = input.nextLine();
+
+        Game game = new Game(playername);
         game.run();
     }
 }
