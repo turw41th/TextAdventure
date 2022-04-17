@@ -7,13 +7,19 @@ public class World {
     private ArrayList<Location> locations;
 
     private Location currentLocation;
+    private Player player;
 
-    public World() {
+    public World(String playername) {
 
         this.locations = new ArrayList<>();
-
+        player = new Player(playername);
         generateLocations();
 
+    }
+
+
+    public Player getPlayer() {
+        return player;
     }
 
     public String getCurrentSituation(){
