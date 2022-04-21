@@ -33,4 +33,25 @@ public class Player {
     public int getLevel() {
         return this.level;
     }
+<<<<<<< Updated upstream
+=======
+
+    public int getCurrency() {
+        return currency;
+    }
+
+    public void addCurrency(int amount){
+        currency += amount;
+    }
+
+    public void spendCurrency(int amount){
+        currency -= amount;
+    }
+
+    public void AddItemToInventory(InventoryObject object){
+        inventory.add(object);
+    }
+
+
+>>>>>>> Stashed changes
 }
