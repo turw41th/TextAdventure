@@ -1,7 +1,6 @@
 package com.action.handler;
 
 import com.textadventure.Game;
-import com.world.World;
 
 public class GetPlayerNameHandler extends PhraseActionHandler{
 
@@ -12,7 +11,10 @@ public class GetPlayerNameHandler extends PhraseActionHandler{
 
     @Override
     public String handle() {
-        return "Your characters name is: " + game.getWorld().getPlayer().getName() + "!";
+        return "Your characters name is: " + game.getWorld()
+                .getPlayer()
+                .getName()
+                + "!";
     }
 
     @Override

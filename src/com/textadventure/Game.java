@@ -42,6 +42,7 @@ public class Game {
         this.actionHandlers.add(new TimeHandler(this));
         this.actionHandlers.add(new GetCurrentLocationHandler(this));
         this.actionHandlers.add(new GetPlayerNameHandler(this));
+        this.actionHandlers.add(new GetCommandsHandler(this));
 
         this.world = new World(playername);
     }
@@ -50,6 +51,9 @@ public class Game {
         return this.world;
     }
 
+    public ArrayList<ActionHandler> getActionHandlers() {
+        return actionHandlers;
+    }
 
     /**
      * Sets exit condition to true. Gets called when /exit command is used

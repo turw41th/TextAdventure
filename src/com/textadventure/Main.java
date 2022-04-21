@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * @author Turwaith
+ * @version alpha-1.0.1
  *
  * This is a basic TextRPG Engine that can be extended. For more detailed info and description, read the readme.md file
  * in the Github repository.
