@@ -7,7 +7,7 @@ public class World {
     private ArrayList<Location> locations;
 
     private Location currentLocation;
-    private Player player;
+    private final Player player;
 
     public World(String playername) {
 

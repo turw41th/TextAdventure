@@ -5,6 +5,7 @@ public class Player {
     private final String name;
     private int health = 100;
     private int level = 1;
+    private int currency = 100;
 
     public Player(String name){
         this.name = name;
@@ -33,8 +34,7 @@ public class Player {
     public int getLevel() {
         return this.level;
     }
-<<<<<<< Updated upstream
-=======
+
 
     public int getCurrency() {
         return currency;
@@ -45,13 +45,19 @@ public class Player {
     }
 
     public void spendCurrency(int amount){
-        currency -= amount;
+        if (this.getCurrency() >= amount){
+            currency -= amount;
+        } else {
+            System.out.println("");
+        }
+
     }
 
+    /*
     public void AddItemToInventory(InventoryObject object){
         inventory.add(object);
     }
+    */
 
 
->>>>>>> Stashed changes
 }
