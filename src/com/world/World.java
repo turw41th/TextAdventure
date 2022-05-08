@@ -14,7 +14,7 @@ public class World {
         this.locations = new ArrayList<>();
         player = new Player(playername);
         generateLocations();
-
+        generateWeaponItems();
     }
 
 
@@ -49,6 +49,13 @@ public class World {
 
 
         this.currentLocation = spireByFire;
+    }
+
+
+
+    private void generateWeaponItems(){
+        player.addWeaponToInventory(new Weapon(20, "Dagger", "melee", "Just a regular dagger", 5));
+        player.addWeaponToInventory(new Weapon(30, "Shortsword", "melee", "A shortsword for a trained warrior", 10));
     }
 
 

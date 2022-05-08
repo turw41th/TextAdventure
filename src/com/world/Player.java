@@ -1,11 +1,15 @@
 package com.world;
 
+import java.util.ArrayList;
+
 public class Player {
 
     private final String name;
     private int health = 100;
     private int level = 1;
     private int currency = 100;
+    private ArrayList<Weapon> weaponInventory = new ArrayList<>();
+    private ArrayList<Item> itemInventory = new ArrayList<>();
 
     public Player(String name){
         this.name = name;
@@ -48,9 +52,13 @@ public class Player {
         if (this.getCurrency() >= amount){
             currency -= amount;
         } else {
-            System.out.println("");
+            System.out.println("You don't have enough money to do this. You only have " + getCurrency() + "!");
         }
 
+    }
+
+    public void addWeaponToInventory(Weapon weapon){
+        weaponInventory.add(weapon);
     }
 
     /*

@@ -1,13 +1,11 @@
 package com.textadventure;
 
 import com.action.handler.*;
-import com.world.Location;
 import com.world.World;
 
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -44,6 +42,7 @@ public class Game {
         this.actionHandlers.add(new GetPlayerNameHandler(this));
 
         this.world = new World(playername);
+
     }
 
     public World getWorld() {
