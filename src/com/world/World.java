@@ -15,6 +15,7 @@ public class World {
         player = new Player(playername);
         generateLocations();
         generateWeaponItems();
+        generateItems();
     }
 
 
@@ -58,5 +59,8 @@ public class World {
         player.addWeaponToInventory(new Weapon(30, "Shortsword", "melee", "A shortsword for a trained warrior", 10));
     }
 
+    private void generateItems(){
+        player.addItemToInventory(new Item(5, "SilverCoin", "item", "A random coin that you have found on the street"));
+    }
 
 }

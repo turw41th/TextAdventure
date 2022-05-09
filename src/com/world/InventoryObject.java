@@ -30,4 +30,12 @@ public abstract class InventoryObject {
     public String getDescription() {
         return description;
     }
+
+    public String getInformation(){
+        String info;
+        info = "Name: " + getName() + "\n"
+                + "Cost: " + getCost() + "\n"
+                + "Description: " + getDescription();
+        return info;
+    }
 }

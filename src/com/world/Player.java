@@ -61,6 +61,22 @@ public class Player {
         weaponInventory.add(weapon);
     }
 
+    public void addItemToInventory(Item item){
+        itemInventory.add(item);
+    }
+
+    public String listInventory(){
+        String inventory = "Weapons:\n-----------------\n";
+        for (Weapon weapon : weaponInventory){
+            inventory = inventory + weapon.getInformation() + "\n\n";
+        }
+        inventory = inventory + "Items:\n-----------------\n";
+        for (Item item : itemInventory){
+            inventory = inventory + item.getInformation() + "\n";
+        }
+        return inventory;
+    }
+
     /*
     public void AddItemToInventory(InventoryObject object){
         inventory.add(object);

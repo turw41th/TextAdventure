@@ -40,6 +40,7 @@ public class Game {
         this.actionHandlers.add(new TimeHandler(this));
         this.actionHandlers.add(new GetCurrentLocationHandler(this));
         this.actionHandlers.add(new GetPlayerNameHandler(this));
+        this.actionHandlers.add(new ListInventoryHandler(this));
 
         this.world = new World(playername);
 

@@ -12,4 +12,14 @@ public class Weapon extends InventoryObject{
     public int getDamage() {
         return damage;
     }
+
+    @Override
+    public String getInformation(){
+        String info;
+        info = "Name: " + getName() + "\n"
+                + "Cost: " + getCost() + "\n"
+                + "Damage: " + getDamage() + "\n"
+                + "Description: " + getDescription();
+        return info;
+    }
 }
