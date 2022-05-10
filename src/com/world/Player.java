@@ -66,22 +66,16 @@ public class Player {
     }
 
     public String listInventory(){
-        String inventory = "Weapons:\n-----------------\n";
+        StringBuilder inventory = new StringBuilder("Weapons:\n-----------------\n");
         for (Weapon weapon : weaponInventory){
-            inventory = inventory + weapon.getInformation() + "\n\n";
+            inventory.append(weapon.getInformation()).append("\n\n");
         }
-        inventory = inventory + "Items:\n-----------------\n";
+        inventory.append("Items:\n-----------------\n");
         for (Item item : itemInventory){
-            inventory = inventory + item.getInformation() + "\n";
+            inventory.append(item.getInformation()).append("\n");
         }
-        return inventory;
+        return inventory.toString();
     }
-
-    /*
-    public void AddItemToInventory(InventoryObject object){
-        inventory.add(object);
-    }
-    */
 
 
 }
