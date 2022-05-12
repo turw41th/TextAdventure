@@ -72,7 +72,7 @@ public class Player {
         }
         inventory.append("Items:\n-----------------\n");
         for (Item item : itemInventory){
-            inventory.append(item.getInformation()).append("\n");
+            inventory.append(item.getInformation()).append("\n\n");
         }
         return inventory.toString();
     }

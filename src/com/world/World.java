@@ -1,6 +1,7 @@
 package com.world;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class World {
 
@@ -57,10 +58,14 @@ public class World {
     private void generateWeaponItems(){
         player.addWeaponToInventory(new Weapon(20, "Dagger", "melee", "Just a regular dagger", 5));
         player.addWeaponToInventory(new Weapon(30, "Shortsword", "melee", "A shortsword for a trained warrior", 10));
+        player.addWeaponToInventory(new Weapon(15, "Mace", "melee", "Regular mace", 7));
+
     }
 
     private void generateItems(){
-        player.addItemToInventory(new Item(5, "SilverCoin", "item", "A random coin that you have found on the street"));
+        player.addItemToInventory(new Item(5, "SilverCoin", "item", "A random coin you have found on the street"));
+        player.addItemToInventory(new Item(3, "Mug", "item", "A nice mug with a cat on it"));
+
     }
 
 }
