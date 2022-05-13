@@ -6,6 +6,7 @@ import java.util.Random;
 public class World {
 
     private ArrayList<Location> locations;
+    private ArrayList<Enemy> enemies;
 
     private Location currentLocation;
     private final Player player;
@@ -13,10 +14,12 @@ public class World {
     public World(String playername) {
 
         this.locations = new ArrayList<>();
+        this.enemies = new ArrayList<>();
         player = new Player(playername);
         generateLocations();
         generateWeaponItems();
         generateItems();
+        generateEnemies();
     }
 
 
@@ -66,6 +69,12 @@ public class World {
         player.addItemToInventory(new Item(5, "SilverCoin", "item", "A random coin you have found on the street"));
         player.addItemToInventory(new Item(3, "Mug", "item", "A nice mug with a cat on it"));
 
+    }
+
+    private void generateEnemies(){
+        enemies.add(new Enemy("Orc", "A regular, pretty ugly orc", 15, 7));
+        enemies.add(new Enemy("Goblin", "Goblin", 10, 5));
+        enemies.add(new Enemy("Wolf", "A blood thristy wolf", 4, 5));
     }
 
 }

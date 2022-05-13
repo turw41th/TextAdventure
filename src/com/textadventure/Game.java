@@ -41,6 +41,7 @@ public class Game {
         this.actionHandlers.add(new GetCurrentLocationHandler(this));
         this.actionHandlers.add(new GetPlayerNameHandler(this));
         this.actionHandlers.add(new ListInventoryHandler(this));
+        this.actionHandlers.add(new ShowImprintHandler(this));
 
         this.world = new World(playername);
 
@@ -70,10 +71,13 @@ public class Game {
      */
     public void run() throws IOException {
 
+        System.out.println("Enter /info to see the imprint");
+        //System.out.println(" or /commands to see a list of all available commands");
+
         while(!this.wantExit){
 
             //Input
-            this.output.print("> ");
+            this.output.print("Command > ");
             command = myInput.nextLine();
 
             //processing

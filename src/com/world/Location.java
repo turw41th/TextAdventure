@@ -5,6 +5,8 @@ public class Location {
     private final String name;
     private String description;
     private boolean visited;
+    private Location nextLocation;
+    private Location previousLocation;
 
     public Location(String name, String description) {
         this.name = name;
@@ -26,5 +28,21 @@ public class Location {
 
     public void setVisited(){
         this.visited = true;
+    }
+
+    public void setNextLocation(Location nextLocation) {
+        this.nextLocation = nextLocation;
+    }
+
+    public Location getNextLocation() {
+        return nextLocation;
+    }
+
+    public void setPreviousLocation(Location previousLocation) {
+        this.previousLocation = previousLocation;
+    }
+
+    public Location getPreviousLocation() {
+        return previousLocation;
     }
 }
