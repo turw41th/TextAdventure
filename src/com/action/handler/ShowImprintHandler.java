@@ -13,6 +13,7 @@ public class ShowImprintHandler extends PhraseActionHandler{
 
         return """
                 Author: Nicolas Baur
+                Year: 2022
                 Version: 1.0
                 License: MIT License
                 
