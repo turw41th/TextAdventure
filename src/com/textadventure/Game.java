@@ -89,6 +89,11 @@ public class Game {
         }
     }
 
+    /**
+     * queries ActionHandler objects with the correct command keyword
+     * @param command query with command as string
+     * @return handle() method of the handler that was called
+     */
     public String update(String command) {
         ActionHandler relevantHandler = null;
         for(ActionHandler handler : this.actionHandlers){

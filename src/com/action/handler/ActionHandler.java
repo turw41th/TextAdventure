@@ -2,6 +2,9 @@ package com.action.handler;
 
 import com.textadventure.Game;
 
+/**
+ * Parent class for all command handler classes
+ */
 public abstract class ActionHandler {
 
     protected Game game;

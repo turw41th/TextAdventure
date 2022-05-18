@@ -2,6 +2,9 @@ package com.action.handler;
 
 import com.textadventure.Game;
 
+/**
+ * Parent class for every command class except error handler
+ */
 public abstract class PhraseActionHandler extends ActionHandler{
 
     public PhraseActionHandler(Game game){
