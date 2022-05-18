@@ -15,9 +15,9 @@ public class ShowImprintHandler extends PhraseActionHandler{
                 Author: Nicolas Baur
                 Year: 2022
                 Version: 1.0
-                License: MIT License
+                License: MIT Licence
                 
-                For license details see License.md file""";
+                For licence details see Licence.md file""";
     }
 
     @Override
