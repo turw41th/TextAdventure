@@ -17,7 +17,10 @@ public class ShowImprintHandler extends PhraseActionHandler{
                 Version: 1.0
                 License: MIT Licence
                 
-                For licence details see Licence.md file""";
+                For licence details see Licence.md file
+                
+                #Disclaimer:
+                Ths game is not finished and not ready to play. Feel free to expand this code to your desires according to the Licence.""";
     }
 
     @Override
