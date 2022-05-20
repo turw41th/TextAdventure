@@ -14,10 +14,12 @@ public class ShowImprintHandler extends PhraseActionHandler{
         return """
                 Author: Nicolas Baur
                 Year: 2022
-                Version: 1.0
+                Version: ALPHA-1.0.1
                 License: MIT Licence
                 
                 For licence details see Licence.md file
+                
+                For more detailed info about the project read the README.md file.
                 
                 #Disclaimer:
                 Ths game is not finished and not ready to play. Feel free to expand this code to your desires according to the Licence.""";
